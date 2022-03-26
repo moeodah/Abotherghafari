@@ -1,5 +1,7 @@
-import { store } from 'quasar/wrappers'
-import { createStore } from 'vuex'
+import { store } from "quasar/wrappers";
+import { createStore } from "vuex";
+import Vuex from "vuex";
+import Vue from "vue";
 
 // import example from './module-example'
 
@@ -15,13 +17,13 @@ import { createStore } from 'vuex'
 export default store(function (/* { ssrContext } */) {
   const Store = createStore({
     modules: {
-      // example
+      store: { namespaced: true },
     },
 
     // enable strict mode (adds overhead!)
     // for dev mode and --debug builds only
-    strict: process.env.DEBUGGING
-  })
+    strict: process.env.DEBUGGING,
+  });
 
-  return Store
-})
+  return Store;
+});

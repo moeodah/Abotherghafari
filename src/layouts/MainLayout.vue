@@ -1,21 +1,30 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-  </q-layout>
+  <div>
+    <q-form @submit.prevent="onSubmit()">
+      <q-input outlined label="Phone Number" v-model="formData.phonenumber" />
+      <q-input outlined label="Name" v-model="formData.Name" />
+      <q-btn type="submit">submit</q-btn>
+    </q-form>
+  </div>
+  <q-page-container>
+    <router-view />
+  </q-page-container>
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
-
-export default defineComponent({
-  name: "MainLayout",
-
-  components: {},
-
+import { mapActions } from "vuex";
+import { sendMessage } from "../boot/send-whatsapp";
+import { reactive } from "vue";
+export default {
   setup() {
-    return {};
+    const formData = reactive({
+      Name: "",
+      phonenumber: "",
+    });
+    const onSubmit = async () => {
+      await sendMessage({ ...formData });
+    };
+    return { formData, onSubmit };
   },
-});
+};
 </script>

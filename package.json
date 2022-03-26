@@ -15,8 +15,10 @@
     "@quasar/extras": "^1.0.0",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "dotenv": "^16.0.0",
     "nodemon": "^2.0.15",
     "quasar": "^2.6.0",
+    "twilio": "^3.76.0",
     "vue": "^3.0.0",
     "vue-i18n": "^9.0.0",
     "vue-router": "^4.0.0",
@@ -46,5 +48,16 @@
     "node": ">= 12.22.1",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
-  }
+  },
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moeodah/Abotherghafari.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moeodah/Abotherghafari/issues"
+  },
+  "homepage": "https://github.com/moeodah/Abotherghafari#readme"
 }
